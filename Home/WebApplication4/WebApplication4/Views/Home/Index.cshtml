@@ -1,0 +1,77 @@
+﻿@model WebApplication4.ViewModel.HomeVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Students</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Group</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Students)
+        {
+            <tr>
+                <td scope="row">@item.Id</td>
+                <td>
+                    <a href="/student/info/@item.Id">
+                        @item.Name
+                    </a>
+                </td>
+                <td>@item.GroupId</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+<h2>Groups</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Group Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Groups)
+        {
+            <tr>
+                <td scope="row">@item.Id</td>
+                <td><a href="/group/info/@item.Id">@item.Name</a></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+<h2>Profession</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Profession Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Professions)
+        {
+            <tr>
+                <td scope="row">@item.Id</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

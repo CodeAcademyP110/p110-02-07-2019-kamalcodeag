@@ -1,0 +1,14 @@
+﻿
+
+@{
+    List<string> users = ViewBag.UserList as List<string>;
+
+}
+
+<link rel="stylesheet" href="~/css/style2.css" />
+
+@foreach (var u in users)
+{
+    <p style="background-color:white;padding:5px;">@u</p>
+}
+
